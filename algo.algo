@@ -1,0 +1,92 @@
+    Algorithme Checkpoint 
+  // instruction 1
+program Decompte;
+var
+  nbMots, nbVoyelles: integer;
+                        caractereNow: char;
+  phrase: string;
+    
+           begin
+  // Initialisation des compteurs
+  nbMots := 0;
+  nbVoyelles := 0;
+  caractereNow := ' ';
+
+  // Saisie de la phrase
+  write('Entrez une phrase : ');
+  readln(phrase);
+
+  // Parcourir chaque caractère de la phrase
+  for caractere in phrase do
+  begin
+             // Mettre à jour le compteur de voyelles (nbVoyelles)
+    if caractere in ['a', 'e', 'i', 'u', 'o', 'y'] then
+    nbVoyelles := nbVoyelles + 1;
+
+    // Mettre à jour le compteur de mots (nbMots)
+    if caractere = ' ' then
+    nbMots := nbMots + 1;
+
+    // Enregistrer l'état actuel de caractereNow
+    // avant d’entamer le traitement du prochain caractère
+    caractereNow := caractere;
+  end;
+                         // Ajouter le dernier mot s'il n'y a pas d'espace à la fin
+                                    if caractereNow <> ' ' then
+                                    nbMots := nbMots + 1;
+
+                        // Afficher les résultats
+                                    writeln('Nombre de Mots : ', nbMots);
+                                    writeln('Nombre de voyelles : ', nbVoyelles);
+
+                                    end.
+                    // instruction 2
+      program SommeDistinct;
+
+                              var
+  tab1: array[1..4] of integer; // Déclarer la taille du tableau
+  tab2: array[1..5] of integer; // Déclarer la taille du tableau
+  grup1, grup2, ele, Sum: integer;
+
+begin
+  // Initialisation des tableaux
+  tab1 := (1, 4, 9, 3);
+  tab2 := (2, 4, 5, 1, 3);
+
+  // Initialisation des groupes avec les valeurs des tableaux
+  grup1 := tab1;
+  grup2 := tab2;
+
+  // Initialisation de la somme des éléments distincts
+  Sum := 0;
+
+  // Parcourir chaque élément du groupe 1
+  for ele in grup1 do
+  begin
+    // Vérifier si l'élément n'est pas présent dans le groupe 2
+    if ele not in grup2 then
+    begin
+      // Ajouter à la somme
+      Sum := Sum + ele;
+    end;
+  end;
+
+  // Afficher la somme des éléments distincts
+  writeln('La somme des éléments distincts est : ', Sum);
+
+end.
+
+
+
+     
+
+   
+
+  
+
+
+                       
+
+
+
+                             
